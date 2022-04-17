@@ -2,32 +2,35 @@ let x, z, trick, grind, amount, input, button1, button2, fullTrick;
 let a = 20;
 let b = 40;
 let tricks = ['Tailwhip', 'Heelwhip', 'Bar', 'Oppo bar'];
-let grinds = ['Feeble', 'Smith', '5050', '5-0', 'Board slide', 'Lip slide']
+let grinds = ['feeble', 'smith', '5050', '5-0', 'board slide', 'lip slide']
 let combo = [];
 let comboIndex = ['Trick', 'Grind'];
 
 function setup() {
     removeElements();
-    createCanvas(550, 400);
+    createCanvas(300, 400);
     background(216,191,216);
-    greeting = createElement('h2', 'Do you want a ledge trick or rail trick?');
+    greeting = createElement('h2', 'Do you want a ledge');
     greeting.position(20, 5);
-    
+    greeting = createElement('h2', 'or rail trick?');
+    greeting.position(20, 30);
     button1 = createButton('Ledge');
-    button1.position(20, 65);
+    button1.position(20, 85);
     button1.mousePressed(ledge);
   
     button2 = createButton('Rail');
-    button2.position(80, 65);
+    button2.position(80, 85);
     button2.mousePressed(rail);
 }
 
 function comboAmount(){
-    greeting = createElement('h2', 'How many tricks do you want in the combo?');
+    greeting = createElement('h2', 'How many tricks do you');
     greeting.position(20, 5);
+    greeting = createElement('h2', 'want in the combo?');
+    greeting.position(20, 30);
   
     sel1 = createSelect();
-    sel1.position(20, 65);
+    sel1.position(20, 85);
     sel1.option('0');
     sel1.option('1');
     sel1.option('2');
@@ -40,7 +43,7 @@ function comboAmount(){
   
   
     button3 = createButton('confirm');
-    button3.position(60, 65);
+    button3.position(60, 85);
     button3.mousePressed(pageSelector)
 }
 function pageSelector(){
@@ -123,198 +126,210 @@ function selectComboType6(){
 
 function page31(){
     removeElements();
-    greeting = createElement('h2', 'Which tricks do you want to be tricks vs grinds?');
+    greeting = createElement('h2', 'Which tricks do you want');
     greeting.position(20, 5);
+    greeting = createElement('h2', 'to be a trick vs a grind?');
+    greeting.position(20, 30);
     sel2 = createSelect();
-    sel2.position(20, 65);
+    sel2.position(20, 85);
     sel2.option('Type');
     sel2.option('Trick');
     sel2.option('Grind');
     sel2.selected('Type');
     sel2.changed(selectComboType1);
     button4 = createButton('confirm');
-    button4.position(80, 65);
+    button4.position(20, 110);
     button4.mousePressed(page4);
 }
 
 function page32(){
     removeElements();
-    greeting = createElement('h2', 'Which tricks do you want to be tricks vs grinds?');
+    greeting = createElement('h2', 'Which tricks do you want');
     greeting.position(20, 5);
+    greeting = createElement('h2', 'to be a trick vs a grind?');
+    greeting.position(20, 30);
     sel2 = createSelect();
-    sel2.position(20, 65);
+    sel2.position(20, 85);
     sel2.option('Type');
     sel2.option('Trick');
     sel2.option('Grind');
     sel2.selected('Type');
     sel2.changed(selectComboType1);
     sel3 = createSelect();
-    sel3.position(80, 65);
+    sel3.position(20, 110);
     sel3.option('Type');
     sel3.option('Trick');
     sel3.option('Grind');
     sel3.selected('Type');
     sel3.changed(selectComboType2);
     button4 = createButton('confirm');
-    button4.position(140, 65);
+    button4.position(20, 135);
     button4.mousePressed(page4);
 }
 function page33(){
     removeElements();
-    greeting = createElement('h2', 'Which tricks do you want to be tricks vs grinds?');
+    greeting = createElement('h2', 'Which tricks do you want');
     greeting.position(20, 5);
+    greeting = createElement('h2', 'to be a trick vs a grind?');
+    greeting.position(20, 30);
     sel2 = createSelect();
-    sel2.position(20, 65);
+    sel2.position(20, 85);
     sel2.option('Type');
     sel2.option('Trick');
     sel2.option('Grind');
     sel2.selected('Type');
     sel2.changed(selectComboType1);
     sel3 = createSelect();
-    sel3.position(80, 65);
+    sel3.position(20, 110);
     sel3.option('Type');
     sel3.option('Trick');
     sel3.option('Grind');
     sel3.selected('Type');
     sel3.changed(selectComboType2);
     sel4 = createSelect();
-    sel4.position(140, 65);
+    sel4.position(20, 135);
     sel4.option('Type');
     sel4.option('Trick');
     sel4.option('Grind');
     sel4.selected('Type');
     sel4.changed(selectComboType3);
     button4 = createButton('confirm');
-    button4.position(200, 65);
+    button4.position(20, 160);
     button4.mousePressed(page4);
 }
 function page34(){
     removeElements();
-    greeting = createElement('h2', 'Which tricks do you want to be tricks vs grinds?');
+    greeting = createElement('h2', 'Which tricks do you want');
     greeting.position(20, 5);
+    greeting = createElement('h2', 'to be a trick vs a grind?');
+    greeting.position(20, 30);
     sel2 = createSelect();
-    sel2.position(20, 65);
+    sel2.position(20, 85);
     sel2.option('Type');
     sel2.option('Trick');
     sel2.option('Grind');
     sel2.selected('Type');
     sel2.changed(selectComboType1);
     sel3 = createSelect();
-    sel3.position(80, 65);
+    sel3.position(20, 110);
     sel3.option('Type');
     sel3.option('Trick');
     sel3.option('Grind');
     sel3.selected('Type');
     sel3.changed(selectComboType2);
     sel4 = createSelect();
-    sel4.position(140, 65);
+    sel4.position(20, 135);
     sel4.option('Type');
     sel4.option('Trick');
     sel4.option('Grind');
     sel4.selected('Type');
     sel4.changed(selectComboType3);
     sel5 = createSelect();
-    sel5.position(200, 65);
+    sel5.position(20, 160);
     sel5.option('Type');
     sel5.option('Trick');
     sel5.option('Grind');
     sel5.selected('Type');
     sel5.changed(selectComboType4);
     button4 = createButton('confirm');
-    button4.position(260, 65);
+    button4.position(20, 185);
     button4.mousePressed(page4);
 }
 function page35(){
     removeElements();
-    greeting = createElement('h2', 'Which tricks do you want to be tricks vs grinds?');
+    greeting = createElement('h2', 'Which tricks do you want');
     greeting.position(20, 5);
+    greeting = createElement('h2', 'to be a trick vs a grind?');
+    greeting.position(20, 30);
     sel2 = createSelect();
-    sel2.position(20, 65);
+    sel2.position(20, 85);
     sel2.option('Type');
     sel2.option('Trick');
     sel2.option('Grind');
     sel2.selected('Type');
     sel2.changed(selectComboType1);
     sel3 = createSelect();
-    sel3.position(80, 65);
+    sel3.position(20, 110);
     sel3.option('Type');
     sel3.option('Trick');
     sel3.option('Grind');
     sel3.selected('Type');
     sel3.changed(selectComboType2);
     sel4 = createSelect();
-    sel4.position(140, 65);
+    sel4.position(20, 135);
     sel4.option('Type');
     sel4.option('Trick');
     sel4.option('Grind');
     sel4.selected('Type');
     sel4.changed(selectComboType3);
     sel5 = createSelect();
-    sel5.position(200, 65);
+    sel5.position(20, 160);
     sel5.option('Type');
     sel5.option('Trick');
     sel5.option('Grind');
     sel5.selected('Type');
     sel5.changed(selectComboType4);
     sel6 = createSelect();
-    sel6.position(260, 65);
+    sel6.position(20, 185);
     sel6.option('Type');
     sel6.option('Trick');
     sel6.option('Grind');
     sel6.selected('Type');
     sel6.changed(selectComboType5);
     button4 = createButton('confirm');
-    button4.position(320, 65);
+    button4.position(20, 210);
     button4.mousePressed(page4);
 }
 function page36(){
     removeElements();
-    greeting = createElement('h2', 'Which tricks do you want to be tricks vs grinds?');
+    greeting = createElement('h2', 'Which tricks do you want');
     greeting.position(20, 5);
+    greeting = createElement('h2', 'to be a trick vs a grind?');
+    greeting.position(20, 30);
     sel2 = createSelect();
-    sel2.position(20, 65);
+    sel2.position(20, 85);
     sel2.option('Type');
     sel2.option('Trick');
     sel2.option('Grind');
     sel2.selected('Type');
     sel2.changed(selectComboType1);
     sel3 = createSelect();
-    sel3.position(80, 65);
+    sel3.position(20, 110);
     sel3.option('Type');
     sel3.option('Trick');
     sel3.option('Grind');
     sel3.selected('Type');
     sel3.changed(selectComboType2);
     sel4 = createSelect();
-    sel4.position(140, 65);
+    sel4.position(20, 135);
     sel4.option('Type');
     sel4.option('Trick');
     sel4.option('Grind');
     sel4.selected('Type');
     sel4.changed(selectComboType3);
     sel5 = createSelect();
-    sel5.position(200, 65);
+    sel5.position(20, 160);
     sel5.option('Type');
     sel5.option('Trick');
     sel5.option('Grind');
     sel5.selected('Type');
     sel5.changed(selectComboType4);
     sel6 = createSelect();
-    sel6.position(260, 65);
+    sel6.position(20, 185);
     sel6.option('Type');
     sel6.option('Trick');
     sel6.option('Grind');
     sel6.selected('Type');
     sel6.changed(selectComboType5);
     sel7 = createSelect();
-    sel7.position(320, 65);
+    sel7.position(20, 210);
     sel7.option('Type');
     sel7.option('Trick');
     sel7.option('Grind');
     sel7.selected('Type');
     sel7.changed(selectComboType6);
     button4 = createButton('confirm');
-    button4.position(380, 65);
+    button4.position(20, 235);
     button4.mousePressed(page4);
 }
 
