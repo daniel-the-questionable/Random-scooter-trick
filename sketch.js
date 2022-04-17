@@ -2,7 +2,7 @@ let x, z, trick, grind, amount, input, button1, button2, fullTrick;
 let a = 20;
 let b = 40;
 let tricks = ['Tailwhip', 'Heelwhip', 'Bar', 'Oppo bar'];
-let grinds = ['BS feeble', 'FS feeble', 'BS smith', 'FS smith']
+let grinds = ['feeble', 'BS smith', '5050', '5-0', 'board slide', 'lip slide']
 let combo = [];
 let comboIndex = ['Trick', 'Grind'];
 
@@ -318,6 +318,7 @@ function page36(){
 }
 
 function page4(){
+    b = 40;
     removeElements();
     greeting = createElement('h2', 'Your randomized trick.');
     greeting.position(20, 5);
@@ -334,6 +335,11 @@ function page4(){
             fullTrick = createElement('h3', grind);
             fullTrick.position(20,b);
             b+=20;
+        }
+        if (j==amount-1){
+            button5 = createButton('Randomize');
+            button5.position(20, b + 25);
+            button5.mousePressed(page4);
         }
     }
 }
