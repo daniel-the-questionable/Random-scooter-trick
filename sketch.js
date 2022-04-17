@@ -340,6 +340,9 @@ function page4(){
             button5 = createButton('Randomize');
             button5.position(20, b + 25);
             button5.mousePressed(page4);
+            button6 = createButton('Back to start');
+            button6.position(20, b + 45);
+            button6.mousePressed(setup);
         }
     }
 }
