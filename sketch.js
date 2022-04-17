@@ -8,7 +8,7 @@ let comboIndex = ['Trick', 'Grind'];
 
 function setup() {
     removeElements();
-    createCanvas(375, 400);
+    createCanvas(400, 400);
     background(136,216,192);
     greeting = createElement('h2', 'Do you want a ledge');
     greeting.position(20, 5);
