@@ -2,7 +2,7 @@ let x, z, trick, grind, amount, input, button1, button2, fullTrick;
 let a = 20;
 let b = 40;
 let tricks = ['Tailwhip', 'Heelwhip', 'Bar', 'Oppo bar'];
-let grinds = ['feeble', 'BS smith', '5050', '5-0', 'board slide', 'lip slide']
+let grinds = ['Feeble', 'Smith', '5050', '5-0', 'Board slide', 'Lip slide']
 let combo = [];
 let comboIndex = ['Trick', 'Grind'];
 
