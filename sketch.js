@@ -25,34 +25,6 @@ function setup() {
 
 
 
-Let easyTricks = [];
-Let mediumTricks = [];
-Let hardTricks = [];
-Let ledgeGrinds = [];
-Let railGrinds = [];
-
-Make button in setup for choosing trickList
-
-
-function trickList (){
-    removeElements();
-    
-    Make title
-
-    Make box to put text for easy, medium, hard, ledge grinds rail grinds
-    Make confirmation button “add”
-    Make it so the text entered will append 
-    createElement();
-    
-    createButton(‘h2’, “finished”);
-    buttonPush(setup);
-}
-
-
-Have i get + 1 if they add a trick and -1 if the remove a trick
-Need a way to remove words from the array(trick list)
-Start blank then have default trick lists button?
-
 
 
 function comboAmount(){
