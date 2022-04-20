@@ -4,7 +4,13 @@ let b = 40;
 let tricks = ['Tailwhip', 'Heelwhip', 'Bar', 'Oppo bar'];
 let grinds = ['feeble', 'smith', '5050', '5-0', 'board slide', 'lip slide']
 let combo = [];
-let comboIndex = ['Trick', 'Grind'];
+let comboIndex = ['Easy Trick', ‘Medium Trick’, ‘Hard Trick’, 'Grind'];
+let easyTricks = [];
+let mediumTricks = [];
+let hardTricks = [];
+let ledgeGrinds = [];
+let railGrinds = [];
+
 
 function setup() {
     removeElements();
@@ -17,15 +23,48 @@ function setup() {
     button1 = createButton('Ledge');
     button1.position(20, 85);
     button1.mousePressed(ledge);
-  
     button2 = createButton('Rail');
     button2.position(80, 85);
     button2.mousePressed(rail);
 }
 
 
+function draw(){
+    if (x==1){
+        removeElements();
+        x=3;
+        comboAmount();
+    }
+    else if (x==2){
+        removeElements();
+        x=4;
+        comboAmount();
+    }
+}
+
+function ledge(){
+    x = 1;
+} 
+function rail(){
+    x = 2;  
+}  
+
+function trickList(){
+    removeElements();
+    greeting = createElement('h2', 'Edit trick lists here');
+    greeting.position(20, 5);
+
+    button11 = createButton(‘Add to list’);
+    button11.position(60, 85);
+    button11.mousePressed(editTrickList);
+}
 
 
+Function editTrickList(){
+
+
+
+}
 
 function comboAmount(){
     greeting = createElement('h2', 'How many tricks do you');
@@ -48,7 +87,7 @@ function comboAmount(){
   
     button3 = createButton('confirm');
     button3.position(60, 85);
-    button3.mousePressed(pageSelector)
+    button3.mousePressed(pageSelector);
 }
 function pageSelector(){
     if (amount == 1){
@@ -76,7 +115,13 @@ function mySelectEvent() {
 }
 
 function selectComboType1(){
-    if (sel2.value() == 'Trick'){
+    if (sel2.value() == ‘Easy Trick'){
+        append(combo, 'Trick');
+    }
+    if (sel2.value() == 'Medium Trick'){
+        append(combo, 'Trick');
+    }
+    if (sel2.value() == 'Hard Trick'){
         append(combo, 'Trick');
     }
     if (sel2.value() == 'Grind'){
@@ -85,7 +130,14 @@ function selectComboType1(){
     
 }
 function selectComboType2(){
-    if (sel3.value() == 'Trick'){
+
+    if (sel2.value() == ‘Easy Trick'){
+        append(combo, 'Trick');
+    }
+    if (sel2.value() == 'Medium Trick'){
+        append(combo, 'Trick');
+    }
+    if (sel2.value() == 'Hard Trick'){
         append(combo, 'Trick');
     }
     if (sel3.value() == 'Grind'){
@@ -93,7 +145,13 @@ function selectComboType2(){
     }
 }
 function selectComboType3(){
-    if (sel4.value() == 'Trick'){
+      if (sel2.value() == ‘Easy Trick'){
+        append(combo, 'Trick');
+    }
+    if (sel2.value() == 'Medium Trick'){
+        append(combo, 'Trick');
+    }
+    if (sel2.value() == 'Hard Trick'){
         append(combo, 'Trick');
     }
     if (sel4.value() == 'Grind'){
@@ -101,7 +159,13 @@ function selectComboType3(){
     }
 }
 function selectComboType4(){
-    if (sel5.value() == 'Trick'){
+      if (sel2.value() == ‘Easy Trick'){
+        append(combo, 'Trick');
+    }
+    if (sel2.value() == 'Medium Trick'){
+        append(combo, 'Trick');
+    }
+    if (sel2.value() == 'Hard Trick'){
         append(combo, 'Trick');
     }
     if (sel5.value() == 'Grind'){
@@ -109,7 +173,13 @@ function selectComboType4(){
     }
 }
 function selectComboType5(){
-    if (sel6.value() == 'Trick'){
+    if (sel2.value() == ‘Easy Trick'){
+        append(combo, 'Trick');
+    }
+    if (sel2.value() == 'Medium Trick'){
+        append(combo, 'Trick');
+    }
+    if (sel6.value() == 'Hard Trick'){
         append(combo, 'Trick');
     }
     if (sel6.value() == 'Grind'){
@@ -117,7 +187,13 @@ function selectComboType5(){
     }
 }
 function selectComboType6(){
-    if (sel7.value() == 'Trick'){
+    if (sel7.value() == ‘Easy Trick'){
+        append(combo, 'Trick');
+    }
+    if (sel7.value() == 'Medium Trick'){
+        append(combo, 'Trick');
+    }
+    if (sel7.value() == 'Hard Trick'){
         append(combo, 'Trick');
     }
     if (sel7.value() == 'Grind'){
@@ -137,7 +213,9 @@ function page31(){
     sel2 = createSelect();
     sel2.position(20, 85);
     sel2.option('Type');
-    sel2.option('Trick');
+    sel2.option('Easy Trick');
+    sel2.option('Medium Trick');
+    sel2.option('Hard Trick');
     sel2.option('Grind');
     sel2.selected('Type');
     sel2.changed(selectComboType1);
@@ -375,23 +453,3 @@ function randomTrick(){
 function randomGrind(){
     grind = random(grinds);
 }
-
-function draw(){
-    if (x==1){
-        removeElements();
-        x=3;
-        comboAmount();
-    }
-    else if (x==2){
-        removeElements();
-        x=4;
-        comboAmount();
-    }
-}
-
-function ledge(){
-    x = 1;
-} 
-function rail(){
-    x = 2;  
-}  
