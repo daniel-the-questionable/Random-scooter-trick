@@ -1,6 +1,9 @@
 let x, z, trick, grind, amount, input, button1, button2, fullTrick;
 let a = 20;
 let b = 40;
+let c = 20;
+let d = 300;
+
 let grinds = ['Feeble', 'Smith', '5050', '5-0', 'Board slide', 'Lip slide']
 let combo = [];
 let comboIndex = ['Easy Trick', 'Medium Trick', 'Hard Trick', 'Grind'];
@@ -119,34 +122,75 @@ function trickList(){
     opt.changed(trickListViewer);
   
     button15 = createButton('Back to home');
-    button15.position(20, 365);
+    button15.position(10, 365);
     button15.mousePressed(setup);
+    greeting = createElement('a2', '*Note* Removing from list is case sensitive');
+    greeting.position(110, 365);
 }
 
 function trickListViewer(){
     if (opt.value() == 'View Easy Trick List'){
         removeElements();
         trickList();
-        greeting1 = createElement('a2', easyTricks);
-        greeting1.position(20, 300);
+        c = 20;
+        d = 290;
+        for (let i = 0; i < easyTricks.length; i++) {
+            greeting1 = createElement('b2', '-' + easyTricks[i]);
+            greeting1.position(c, d);
+            c=c+90;
+            if (c>350){
+              d=d+20;
+              c=20
+            }
+        }
     }
+  
     if (opt.value() == 'View Medium Trick List'){
         removeElements();
         trickList();
-        greeting1 = createElement('a2', mediumTricks);
-        greeting1.position(20, 300);
+        c = 20;
+        d = 290;
+        for (let i = 0; i < mediumTricks.length; i++) {
+            greeting1 = createElement('b2', '-' + mediumTricks[i]);
+            greeting1.position(c, d);
+            c=c+90;
+            if (c>350){
+              d=d+20;
+              c=20
+            }
+        }
     }
+  
     if (opt.value() == 'View Hard Trick List'){
         removeElements();
         trickList();
-        greeting1 = createElement('a2', hardTricks);
-        greeting1.position(20, 300);
+        c = 20;
+        d = 290;
+        for (let i = 0; i < hardTricks.length; i++) {
+            greeting1 = createElement('b2', '-' + hardTricks[i]);
+            greeting1.position(c, d);
+            c=c+90;
+            if (c>350){
+              d=d+20;
+              c=20
+            }
+        }
     }
+  
     if (opt.value() == 'View Grind List'){
         removeElements();
         trickList();
-        greeting1 = createElement('a2', grinds);
-        greeting1.position(20, 300);
+        c = 20;
+        d = 290;
+        for (let i = 0; i < grinds.length; i++) {
+            greeting1 = createElement('b2', '-' + grinds[i]);
+            greeting1.position(c, d);
+            c=c+90;
+            if (c>350){
+              d=d+20;
+              c=20
+            }
+        }
     }
 }
 
@@ -163,7 +207,7 @@ function removeEasyTrickList(){
         easyTricks.shift();
     }
   
-    for (let i = 0; i < 9; i++) {
+    for (let i = 0; i < easyTricks.length; i++) {
         if (easyTricks[i] == easyValue){
             easyTricks.splice(i, i);
         }
@@ -184,13 +228,12 @@ function removeMediumTrickList(){
         mediumTricks.shift();
     }
   
-    for (let i = 0; i < 9; i++) {
+    for (let i = 0; i < mediumTricks.length; i++) {
         if (mediumTricks[i] == mediumValue){
             mediumTricks.splice(i, i);
         }
     }
     mediumTrickInput.value('');
-  
 }
 
 function editHardTrickList(){
@@ -206,13 +249,12 @@ function removeHardTrickList(){
         hardTricks.shift();
     }
   
-    for (let i = 0; i < 9; i++) {
+    for (let i = 0; i < hardTricks.length; i++) {
         if (hardTricks[i] == hardValue){
             hardTricks.splice(i, i);
         }
     }
     hardTrickInput.value('');
-  
 }
 
 function editGrindTrickList(){
@@ -228,13 +270,12 @@ function removeGrindTrickList(){
         grinds.shift();
     }
   
-    for (let i = 0; i < 9; i++) {
+    for (let i = 0; i < grinds.length; i++) {
         if (grinds[i] == grindValue){
             grinds.splice(i, i);
         }
     }
     grindInput.value('');
-  
 }
 
 
