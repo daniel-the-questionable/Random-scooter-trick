@@ -1,7 +1,6 @@
 let x, z, trick, grind, amount, input, button1, button2, fullTrick;
 let a = 20;
 let b = 40;
-let tricks = ['Tailwhip', 'Heelwhip', 'Bar', 'Oppo bar'];
 let grinds = ['Feeble', 'Smith', '5050', '5-0', 'Board slide', 'Lip slide']
 let combo = [];
 let comboIndex = ['Easy Trick', 'Medium Trick', 'Hard Trick', 'Grind'];
@@ -10,7 +9,7 @@ let mediumTricks = ['Bartwist', 'Fingerwhip', 'FS 360', 'BS 360'];
 let hardTricks = ['Briflip', 'Inward', 'FS 540', 'BS 540'];
 let ledgeGrinds = [];
 let railGrinds = [];
-
+let greeting1;
 
 function setup() {
     removeElements();
@@ -27,6 +26,8 @@ function setup() {
     button2 = createButton('Rail');
     button2.position(80, 85);
     button2.mousePressed(rail);
+    greeting = createElement('A2', 'Ledge vs. rail is Work in progress');
+    greeting.position(130, 85);
   
     button11 = createButton('Edit trick list');
     button11.position(20, 110);
@@ -64,50 +65,178 @@ function trickList(){
     easyTrickInput = createInput();
     easyTrickInput.position(20, 85);
     easyTrickInput.size(65);
-    easyTrickInput.input();
     button11 = createButton('Add to list');
-    button11.position(60, 85);
-    button11.mousePressed(editTrickList);
+    button11.position(96, 85);
+    button11.mousePressed(editEasyTrickList);
+    button21 = createButton('Remove from list');
+    button21.position(174, 85);
+    button21.mousePressed(removeEasyTrickList);
   
-    greeting = createElement('h2', 'Add to medium trick list');
-    greeting.position(20, 5);
+    greeting = createElement('a2', 'Add to medium trick list');
+    greeting.position(20, 115);
     mediumTrickInput = createInput();
-    mediumTrickInput.position(20, 110);
+    mediumTrickInput.position(20, 135);
     mediumTrickInput.size(65);
     button12 = createButton('Add to list');
-    button12.position(60, 110);
-    button12.mousePressed(editTrickList);
+    button12.position(96, 135);
+    button12.mousePressed(editMediumTrickList);
+    button22 = createButton('Remove from list');
+    button22.position(174, 135);
+    button22.mousePressed(removeMediumTrickList);
   
-    greeting = createElement('h2', 'Add to hard trick list');
-    greeting.position(20, 5);
+    greeting = createElement('a2', 'Add to hard trick list');
+    greeting.position(20, 165);
     hardTrickInput = createInput();
-    hardTrickInput.position(20, 135);
+    hardTrickInput.position(20, 185);
     hardTrickInput.size(65);
-    hardTrickInput.input();
     button13 = createButton('Add to list');
-    button13.position(60, 135);
-    button13.mousePressed(editTrickList);
+    button13.position(96, 185);
+    button13.mousePressed(editHardTrickList);
+    button23 = createButton('Remove from list');
+    button23.position(174, 185);
+    button23.mousePressed(removeHardTrickList);
   
-    greeting = createElement('h2', 'Add to grind list');
-    greeting.position(20, 5);
+    greeting = createElement('a2', 'Add to grind list');
+    greeting.position(20, 215);
     grindInput = createInput();
-    grindInput.position(20, 160);
+    grindInput.position(20, 235);
     grindInput.size(65);
-    grindInput.input();
     button14 = createButton('Add to list');
-    button14.position(60, 160);
-    button14.mousePressed(editTrickList);
+    button14.position(96, 235);
+    button14.mousePressed(editGrindTrickList);
+    button24 = createButton('Remove from list');
+    button24.position(174, 235);
+    button24.mousePressed(removeGrindTrickList);
   
+    opt = createSelect();
+    opt.position(20, 265);
+    opt.option('View Trick Lists');
+    opt.option('View Easy Trick List');
+    opt.option('View Medium Trick List');
+    opt.option('View Hard Trick List');
+    opt.option('View Grind List');
+    opt.selected('View Trick lists');
+    opt.changed(trickListViewer);
   
-  
+    button15 = createButton('Back to home');
+    button15.position(20, 365);
+    button15.mousePressed(setup);
+}
+
+function trickListViewer(){
+    if (opt.value() == 'View Easy Trick List'){
+        removeElements();
+        trickList();
+        greeting1 = createElement('a2', easyTricks);
+        greeting1.position(20, 300);
+    }
+    if (opt.value() == 'View Medium Trick List'){
+        removeElements();
+        trickList();
+        greeting1 = createElement('a2', mediumTricks);
+        greeting1.position(20, 300);
+    }
+    if (opt.value() == 'View Hard Trick List'){
+        removeElements();
+        trickList();
+        greeting1 = createElement('a2', hardTricks);
+        greeting1.position(20, 300);
+    }
+    if (opt.value() == 'View Grind List'){
+        removeElements();
+        trickList();
+        greeting1 = createElement('a2', grinds);
+        greeting1.position(20, 300);
+    }
 }
 
 
-function editTrickList(){
-
-
-
+function editEasyTrickList(){
+    const easyValue = easyTrickInput.value();
+    append(easyTricks, easyValue); 
+    easyTrickInput.value('');
 }
+
+function removeEasyTrickList(){
+    const easyValue = easyTrickInput.value();
+    if (easyTricks[0] == easyValue){
+        easyTricks.shift();
+    }
+  
+    for (let i = 0; i < 9; i++) {
+        if (easyTricks[i] == easyValue){
+            easyTricks.splice(i, i);
+        }
+    }
+    easyTrickInput.value('');
+}
+
+function editMediumTrickList(){
+    const mediumValue = mediumTrickInput.value();
+    append(mediumTricks, mediumValue); 
+    mediumTrickInput.value('');
+}
+
+
+function removeMediumTrickList(){
+    const mediumValue = mediumTrickInput.value();
+    if (mediumTricks[0] == mediumValue){
+        mediumTricks.shift();
+    }
+  
+    for (let i = 0; i < 9; i++) {
+        if (mediumTricks[i] == mediumValue){
+            mediumTricks.splice(i, i);
+        }
+    }
+    mediumTrickInput.value('');
+  
+}
+
+function editHardTrickList(){
+    const hardValue = hardTrickInput.value();
+    append(hardTricks, hardValue); 
+    hardTrickInput.value('');
+}
+
+
+function removeHardTrickList(){
+    const hardValue = hardTrickInput.value();
+    if (hardTricks[0] == hardValue){
+        hardTricks.shift();
+    }
+  
+    for (let i = 0; i < 9; i++) {
+        if (hardTricks[i] == hardValue){
+            hardTricks.splice(i, i);
+        }
+    }
+    hardTrickInput.value('');
+  
+}
+
+function editGrindTrickList(){
+    const grindValue = grindInput.value();
+    append(grinds, grindValue); 
+    grindInput.value('');
+}
+
+
+function removeGrindTrickList(){
+    const grindValue = grindInput.value();
+    if (grinds[0] == grindValue){
+        grinds.shift();
+    }
+  
+    for (let i = 0; i < 9; i++) {
+        if (grinds[i] == grindValue){
+            grinds.splice(i, i);
+        }
+    }
+    grindInput.value('');
+  
+}
+
 
 function comboAmount(){
     greeting = createElement('h2', 'How many tricks do you');
