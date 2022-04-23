@@ -21,8 +21,6 @@ function setup() {
     combo = [];
     greeting = createElement('h2', 'Home page');
     greeting.position(20, 5);
-    greeting = createElement('h2', '');
-    greeting.position(20, 30);
     button1 = createButton('Start randomize trick');
     button1.position(20, 85);
     button1.mousePressed(ledge);
