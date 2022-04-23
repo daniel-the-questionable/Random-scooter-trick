@@ -26,7 +26,7 @@ function setup() {
     button1 = createButton('Start randomize trick');
     button1.position(20, 85);
     button1.mousePressed(ledge);
-    greeting = createElement('A2', 'Ledge vs. rail is Work in progress');
+    greeting = createElement('A2', '');
     greeting.position(130, 85);
   
     button11 = createButton('Edit trick list');
