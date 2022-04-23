@@ -19,16 +19,13 @@ function setup() {
     createCanvas(400, 400);
     background(136,216,192);
     combo = [];
-    greeting = createElement('h2', 'Do you want a ledge');
+    greeting = createElement('h2', 'Home page');
     greeting.position(20, 5);
-    greeting = createElement('h2', 'or rail trick?');
+    greeting = createElement('h2', '');
     greeting.position(20, 30);
-    button1 = createButton('Ledge');
+    button1 = createButton('Start randomize trick');
     button1.position(20, 85);
     button1.mousePressed(ledge);
-    button2 = createButton('Rail');
-    button2.position(80, 85);
-    button2.mousePressed(rail);
     greeting = createElement('A2', 'Ledge vs. rail is Work in progress');
     greeting.position(130, 85);
   
